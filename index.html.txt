@@ -1,6 +1,5 @@
 	<head>
 Hello World, can you see me ?
-<> Not so clearly . 
-<request user to login> 
+<> Not so clearly 
 <request user to login> 
 </head>
