@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'ng build'
+        nodejs('node-latest') {
+          sh 'ng build'
+        }
+
       }
     }
 
