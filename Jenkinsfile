@@ -28,7 +28,7 @@ pipeline {
           sh 'ng build'
         }
 
-        stash(name: 'build-files', includes: 'dist')
+        stash 'build-files'
       }
     }
 
