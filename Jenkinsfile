@@ -5,9 +5,18 @@ pipeline {
       steps {
         nodejs('node-latest') {
           sh '''npm i -g @angular/cli
-npm i
-ng build
+
+
 '''
+        }
+
+      }
+    }
+
+    stage('Install Dependencies') {
+      steps {
+        nodejs('node-latest') {
+          sh 'npm i'
         }
 
       }
