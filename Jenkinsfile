@@ -1,10 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Create Env') {
       steps {
         nodejs('node-latest') {
-          sh 'ng build'
+          sh '''npm i -g @angular/cli
+npm i
+ng build
+'''
         }
 
       }
