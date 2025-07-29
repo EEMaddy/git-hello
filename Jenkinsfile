@@ -33,7 +33,7 @@ pipeline {
 
     stage('Deployment') {
       steps {
-        sh 'rsync -avz /dist/angular-hello root@cc.probatusai.com:/tmp'
+        sh 'rsync -avz ./git-hello_master/dist/angular-hello root@cc.probatusai.com:/tmp'
       }
     }
 
