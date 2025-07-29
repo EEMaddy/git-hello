@@ -23,7 +23,6 @@ pipeline {
     }
 
     stage('Build') {
-      agent any
       steps {
         nodejs('node-latest') {
           sh 'ng build'
