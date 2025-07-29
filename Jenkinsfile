@@ -23,6 +23,12 @@ pipeline {
     }
 
     stage('Build') {
+      agent {
+        node {
+          label 'node-slave'
+        }
+
+      }
       steps {
         nodejs('node-latest') {
           sh 'ng build'
