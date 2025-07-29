@@ -28,19 +28,11 @@ pipeline {
           sh 'ng build'
         }
 
-        stash 'build-files'
       }
     }
 
     stage('Deployment') {
-      agent {
-        node {
-          label 'node-slave'
-        }
-
-      }
       steps {
-        unstash 'build-files'
         sh 'rsync -avz dist root@cc.probatusai.com:/tmp'
       }
     }
