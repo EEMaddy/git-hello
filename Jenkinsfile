@@ -32,6 +32,12 @@ pipeline {
     }
 
     stage('Deployment') {
+      agent {
+        node {
+          label 'node-slave'
+        }
+
+      }
       steps {
         sh 'rsync -avz dist root@cc.probatusai.com:/tmp'
       }
