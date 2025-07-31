@@ -28,6 +28,7 @@ pipeline {
           sh 'ng build'
         }
 
+        stash(name: 'build-stash', includes: 'dist/**', excludes: 'node_modules/**')
       }
     }
 
@@ -39,6 +40,7 @@ pipeline {
 
       }
       steps {
+        unstash 'node-stash'
         sh 'rsync -avz dist root@cc.probatusai.com:/tmp'
       }
     }
