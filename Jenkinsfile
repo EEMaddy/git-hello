@@ -40,7 +40,7 @@ pipeline {
 
       }
       steps {
-        unstash 'node-stash'
+        unstash 'build-stash'
         sh 'rsync -avz dist root@cc.probatusai.com:/tmp'
       }
     }
